@@ -1,14 +1,19 @@
 name: App Orchestrator
 
 on:
-  push:
-    branches: [ "main" ]
+    push:
+        branches: ["main"]
+
+permissions:
+    contents: write
+    packages: write
+    deployments: write
 
 jobs:
-  build-action:
-    uses: jairbs98/devops-workflows/.github/workflows/controller.yml@main
-    with:
-      app_name: "sonarqube-pr-cleaner"
-      app_type: "github-action-docker"
-      deploy_type: "none"
-    secrets: inherit
+    build-action:
+        uses: jairbs98/devops-workflows/.github/workflows/controller.yml@main
+        with:
+            app_name: "sonarqube-pr-cleaner"
+            app_type: "github-action-docker"
+            deploy_type: "none"
+        secrets: inherit
