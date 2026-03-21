@@ -16,4 +16,5 @@ jobs:
             app_name: "sonarqube-pr-cleaner"
             app_type: "github-action-docker"
             deploy_type: "none"
+            language_version: "24"
         secrets: inherit
