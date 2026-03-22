@@ -10,10 +10,10 @@ permissions:
     deployments: write
 
 jobs:
-    security:
-        uses: jairbs98/devops-workflows/.github/workflows/task-security.yml@main
+    devsecops:
+        uses: jairbs98/devops-workflows/.github/workflows/controller.yml@main
         with:
             app_name: "sonarqube-pr-cleaner"
             app_type: "github-action-node"
-            app_version: "1.0.1"
+            deploy_type: "none"
         secrets: inherit
