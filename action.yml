@@ -1,15 +1,15 @@
-name: 'SonarQube PR Cleaner'
-description: 'Elimina proyectos temporales de SonarQube al cerrar un PR'
+name: "SonarQube PR Cleaner"
+description: "Elimina proyectos temporales de SonarQube al cerrar un PR"
 inputs:
   sonar_url:
-    description: 'URL del servidor SonarQube'
+    description: "URL del servidor SonarQube"
     required: true
   sonar_token:
-    description: 'Token de administración de SonarQube'
+    description: "Token de administración"
     required: true
   project_key:
-    description: 'La llave del proyecto a eliminar'
+    description: "Llave del proyecto a eliminar"
     required: true
 runs:
-  using: 'docker'
-  image: 'docker://ghcr.io/jairbs98/sonarqube-pr-cleaner:latest'
+  using: "node20"
+  main: "dist/index.js"
